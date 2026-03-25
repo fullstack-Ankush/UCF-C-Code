@@ -15,8 +15,15 @@ class Complex{
         void showComplex(){
             cout<<realNum<<"+"<<iNum<<"i"<<endl;
         }
+        Complex add(Complex);
 };
 
+Complex Complex::add(Complex c){
+    Complex temp;
+    temp.setReal(realNum + c.realNum);
+    temp.setImaginary(iNum + c.iNum);
+    return temp;
+}
 class Time{
     private:
         int hr = 0;
