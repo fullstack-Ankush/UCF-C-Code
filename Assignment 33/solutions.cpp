@@ -16,6 +16,8 @@ class Complex{
             cout<<realNum<<"+"<<iNum<<"i"<<endl;
         }
         Complex add(Complex);
+        Complex subtract(Complex);
+        Complex multiply(Complex);
 };
 
 Complex Complex::add(Complex c){
@@ -24,6 +26,20 @@ Complex Complex::add(Complex c){
     temp.setImaginary(iNum + c.iNum);
     return temp;
 }
+Complex Complex::subtract(Complex c){
+    Complex temp;
+    temp.setReal(realNum - c.realNum);
+    temp.setImaginary(iNum - c.iNum);
+    return temp;
+}
+
+Complex Complex::multiply(Complex c){
+    Complex temp;
+    temp.setReal(realNum * c.realNum);
+    temp.setImaginary(iNum * c.iNum);
+    return temp;
+}
+
 class Time{
     private:
         int hr = 0;
