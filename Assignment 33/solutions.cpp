@@ -54,7 +54,29 @@ class Time{
         void showTime(){
             cout<<hr<<" Hr "<<min<<" Min "<<sec<<" Sec"<<endl;
         }
+        void normalize();
+        Time add(Time);
 };
+
+
+Time Time::add(Time t){
+    Time temp;
+    temp.setTime(t.hr+hr,t.min+min,t.sec + sec);
+    return temp;
+}
+void Time::normalize(){
+    if(sec>60){
+        min += sec%60;
+        sec -=60;
+    }
+    if (min>60){
+        hr += min/60;
+        min -=60;
+    }
+    cout<<"Normalize time is : "<<hr<<":"<<min<<":"<<sec<<endl;
+}
+
+
 
 class Circle{
 
@@ -82,13 +104,16 @@ class Circle{
 
 int main(){
     Complex num1;
-    Time t1;
+    Time t1,t2;
     Circle c1;
     num1.setReal(7);
     num1.setImaginary(-4);
     num1.showComplex();
-    t1.setTime(8,12,44);
-    t1.showTime();
+    t1.setTime(8,57,74);
+    t2.setTime(4,12,43);
+    Time result = t1.add(t2);
+    result.showTime();
+    result.normalize();
     c1.setRadius(4.1);
     float r1 = c1.getArea();
     cout<<r1<<endl;
