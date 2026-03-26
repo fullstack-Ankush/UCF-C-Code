@@ -76,26 +76,24 @@ void Time::normalize(){
     cout<<"Normalize time is : "<<hr<<":"<<min<<":"<<sec<<endl;
 }
 
-
-
-class Circle{
-
-    float radius;
+class TestResult{
+    private:
+        int roll_no;
+        int right;
+        int wrong;
+        int net_score;
     public:
-        void setRadius(float  r){
-            radius = r;
-        }
-        void getRadius(){
-            cout<<radius;
-        }
-        float getPerimeter(){
-            return 2*3.14*radius;
-        }
-        float getArea(){
-            return 3.14*radius*radius;
-        }
+        void right_weightage();
+        void wrong_weightage();
+        void setRollno();
+        void setright();
+        void setwrong();
+        
+
 
 };
+
+
 
 
 
@@ -105,7 +103,6 @@ class Circle{
 int main(){
     Complex num1;
     Time t1,t2;
-    Circle c1;
     num1.setReal(7);
     num1.setImaginary(-4);
     num1.showComplex();
@@ -114,10 +111,6 @@ int main(){
     Time result = t1.add(t2);
     result.showTime();
     result.normalize();
-    c1.setRadius(4.1);
-    float r1 = c1.getArea();
-    cout<<r1<<endl;
-    float r2 = c1.getPerimeter();
-    cout<<r2<<endl;
+   
 
 }
